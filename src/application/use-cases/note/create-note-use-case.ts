@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import NoteRepository from "src/application/repositories/note-repository";
-import Note from "src/domain/entities/Note";
+import NoteRepository from "@application/repositories/note-repository";
+import Note from "@domain/entities/Note";
 
 type NoteCreateInput = {
     title : string

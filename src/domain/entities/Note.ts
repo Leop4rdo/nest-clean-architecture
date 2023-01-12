@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import ContentVO from "../value-objects/content";
+import ContentVO from "@domain/value-objects/content";
 
 export type NoteProps = {
     id ?: string
@@ -7,7 +7,6 @@ export type NoteProps = {
     content : string
     createdAt ?: Date
 }
-
 
 export default class Note {
     private _id : string;

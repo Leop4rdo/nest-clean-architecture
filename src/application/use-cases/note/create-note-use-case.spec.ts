@@ -1,4 +1,4 @@
-import InMemoryNoteRepository from "../../../infra/in-memory-database/InMemoryNoteRepository";
+import InMemoryNoteRepository from "@infra/in-memory-database/InMemoryNoteRepository";
 import CreateNoteUseCase from "./create-note-use-case";
 
 describe('Create note use case tests', () => {
