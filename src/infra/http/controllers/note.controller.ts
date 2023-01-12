@@ -1,4 +1,5 @@
 import CreateNoteUseCase from "@application/use-cases/note/create-note-use-case";
+import ListAllNotesUseCase from "@application/use-cases/note/list-all-notes-use-case";
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import NotePresenter from "../presenter/note-presenter";
 import NoteCreateRequestBody from "../request-body/note/note-create-request-body";
@@ -7,7 +8,8 @@ import NoteCreateRequestBody from "../request-body/note/note-create-request-body
 export default class NoteController {
 
     constructor(
-        private readonly _createNoteUseCase : CreateNoteUseCase
+        private readonly _createNoteUseCase : CreateNoteUseCase,
+        private readonly _listAllNotesUseCase : ListAllNotesUseCase
     ) {}
 
     @Post()
@@ -18,8 +20,10 @@ export default class NoteController {
     } 
 
     @Get()
-    public list() {
-        return 'Not Implemented Yet';
+    public async list() {
+        const notes = await this._listAllNotesUseCase.handle();
+
+        return NotePresenter.toHttpListResponse(notes)
     }
 
     @Get(':id')

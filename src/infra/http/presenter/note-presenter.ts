@@ -10,4 +10,11 @@ export default class NotePresenter {
             created_at : note.createdAt.toISOString()
         }
     }
+
+    static toHttpListResponse(notes : Note[]) {
+        return {
+            amount : notes.length,
+            data : notes.map(this.toHttpResponse)
+        }
+    }
 }
