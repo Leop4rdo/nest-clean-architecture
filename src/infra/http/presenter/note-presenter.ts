@@ -7,7 +7,7 @@ export default class NotePresenter {
             id : note.id,
             title : note.title,
             content : note.content.value,
-            created_at : note.createdAt
+            created_at : note.createdAt.toISOString()
         }
     }
 }

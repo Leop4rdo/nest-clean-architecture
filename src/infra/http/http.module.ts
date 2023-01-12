@@ -5,7 +5,7 @@ import NoteController from "./controllers/note.controller";
 
 @Module({
     imports: [ TypeOrmDatabaseModule ],
-    controllers: [NoteController],
+    controllers: [ NoteController ],
     providers : [
         CreateNoteUseCase
     ]

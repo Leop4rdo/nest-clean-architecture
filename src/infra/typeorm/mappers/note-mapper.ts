@@ -12,7 +12,7 @@ export default class NoteMapper {
         model.id = note.id;
         model.title = note.title;
         model.content = note.content.value;
-        model.createdAt = Timestamp.fromString(note.createdAt.toISOString());
+        model.createdAt = note.createdAt.toISOString();
 
         return model;
     }

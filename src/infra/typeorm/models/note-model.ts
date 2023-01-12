@@ -11,6 +11,6 @@ export default class NoteModel {
     @Column()
     content : string
 
-    @Column('timestamptz', { name : 'created_at' })
-    createdAt : Timestamp
+    @Column({ name : 'created_at' })
+    createdAt : string
 }
