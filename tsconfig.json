@@ -24,7 +24,7 @@
         "@application/*" : ["./src/application/*"],
         "@domain/*" : ["./src/domain/*"],
         "@infra/*": ["./src/infra/*"],
-        "@test/*": ["./src/test/*"]
+        "@test/*": ["./test/*"]
     }
   }
 }

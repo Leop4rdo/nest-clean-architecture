@@ -1,10 +1,10 @@
 import Note from "@domain/entities/Note";
 import InMemoryNoteRepository from "@infra/in-memory-database/InMemoryNoteRepository"
-import TestUtils from "test/utils";
+import TestUtils from "@test/utils";
 import ListAllNotesUseCase from "./list-all-notes-use-case";
 
 describe('List all notes use case tests', () => {
-    it('should list all notes', () => {
+    it('should list all notes', async () => {
         const repo = new InMemoryNoteRepository()
             .withData(TestUtils.repeat(
                 (index : number) => new Note({
@@ -16,7 +16,7 @@ describe('List all notes use case tests', () => {
 
         const useCase = new ListAllNotesUseCase(repo);
 
-        const result = useCase.handle();
+        const result = await useCase.handle();
 
         expect(result).toHaveLength(10);
     })

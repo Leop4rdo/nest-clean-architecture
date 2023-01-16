@@ -17,7 +17,11 @@ export default class CreateNoteUseCase {
         const note = new Note(input);
 
         await this._noteRepository.create(note);
-        
+
         return note;
     }
 }
+
+
+
+
